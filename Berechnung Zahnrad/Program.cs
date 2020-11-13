@@ -57,12 +57,12 @@ namespace Berechnung_Zahnrad
             Console.WriteLine("2.stahl");
             Console.WriteLine("Bitte wahlen Sie den werkstoff des zahnrad aus und eintippen 1,2 dann bestätigen Sie mit 'Enter'.");
             Console.WriteLine();
-            string w="";                                       //w：wahlen Sie den werkstoff des zahnrad aus
+            string w="";                                                                                                                      //w：wahlen Sie den werkstoff des zahnrad aus
             while (w!="1"&&w!="2")
             {
                 w = Console.ReadLine();
                
-                if (w ==" 1")
+                if (w =="1")
                 {
                     //Berechnung
                     double p1, da1, df1, h1, ha1, hf1, c1, v1, preis1, M1;
@@ -88,7 +88,7 @@ namespace Berechnung_Zahnrad
                     Console.WriteLine("    preis                   ={0}Euro", preis1);
                 }
 
-                else if (w ==" 2")
+                else if (w =="2")
                 {
 
 
@@ -120,48 +120,33 @@ namespace Berechnung_Zahnrad
                 }
 
                 else 
-
                 {
-
-                    Console.WriteLine();
-                    Console.WriteLine("bitte geben Sie 1 oder 2");
-                   
-
+                      Console.WriteLine();
+                      Console.WriteLine("bitte geben Sie 1 oder 2");
                 }
+
             }
-            Console.ReadKey();
+           
 
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
-
-
-
 
             Console.WriteLine("möchten Sie mit anderem zahnrad verbinden?");
             Console.WriteLine("1.ja");
             Console.WriteLine("2.nein");
             Console.WriteLine();
             Console.WriteLine("Bitte wahlen Sie aus und eintippen 1,2 dann bestätigen Sie mit 'Enter'.");
-            string e = "";
-            while (e != "1" || e != "2")
+            string e = "";                                                                                                                     //e:entscheidung for verbindung
+            while (e != "1" && e != "2")
             {
-                e = Console.ReadLine(); //e:entscheidung for verbindung
+                e = Console.ReadLine(); 
                 if (e == "1")
                 {
                     Console.WriteLine();
                
-                    Console.WriteLine("1.messig");
-                    Console.WriteLine("2.stahl");
-                    Console.WriteLine("Bitte wahlen Sie den werkstoff des zahnrad aus und eintippen 1,2 dann bestätigen Sie mit 'Enter'.");
-
-
-                    string w2 = "";             //  werkstoff auswahl
-
                    
-
-                    Console.WriteLine();
                     Console.WriteLine("Bitte geben Sie den Moudle des zahnrad ein und bestätigen Sie mit 'Enter'.");
                     string Moudle2 = Console.ReadLine();
                     double m2 = getmoudle2(Moudle2);
@@ -172,88 +157,84 @@ namespace Berechnung_Zahnrad
 
                     Console.WriteLine("Bitte geben Sie den Teilkreisdurchmesser des zahnrad ein und bestätigen Sie mit 'Enter'.");
                     string Teilkreisdurchmesser2 = Console.ReadLine();
-
-
                     d2 = getTeilkreisdurchmesser2(Teilkreisdurchmesser2);
 
                     Console.WriteLine("Bitte geben Sie den Breite des zahnrad ein und bestätigen Sie mit 'Enter'.");
                     string Breite2 = Console.ReadLine();
                     double b2 = getBreite2(Breite2);
 
-                    if (w2 == "1")
-                    {
-
-
-
-                        //Berechnung
-                        double p2, da2, df2, h2, ha2, hf2, c2, v21, preis21, M21;
-                        p2 = Math.PI * m2;
-                        da2 = d2 + 2 * m2;
-                        c2 = 0.16 * m2;
-                        df2 = d2 - 2 * (m2 + c2);
-                        h2 = 2 * m2 + c2;
-                        ha2 = m2;
-                        hf2 = m2 + c2;
-                        v21 = Math.PI * da2 * da2 * b2 / 4;
-                        M21 = v21 * dichtmessig;
-                        preis21 = M21 * preismessig;
-                        Console.WriteLine("    Teilung               ={0}mm", p2);//*****************************
-                        Console.WriteLine("    Kopfkreisdurchmesser  ={0}mm", da2);
-                        Console.WriteLine("    Kopfspiel             ={0}mm", c2);
-                        Console.WriteLine("    Fusskreisdurchmesser  ={0}mm", df2);
-                        Console.WriteLine("    zahnhoehe             ={0}mm", h2);
-                        Console.WriteLine("    zahnkopfhoehe         ={0}mm", ha2);
-                        Console.WriteLine("    zahnfusshoehe         ={0}mm", hf2);
-                        Console.WriteLine("    volumen               ={0}mm^3", v21);
-                        Console.WriteLine("    Masse                 ={0}kg", M21);
-                        Console.WriteLine("    preis                 ={0}Euro", preis21);
-
-                    }
-
-                    else if (w2 == "2")
-                    {
-
-
-
-
-                        //Berechnung
-                        double p2, da2, df2, h2, ha2, hf2, c2, v22, preis22, M22;
-                        p2 = Math.PI * m2;
-                        da2 = d2 + 2 * m2;
-                        c2 = 0.16 * m2;
-                        df2 = d2 - 2 * (m2 + c2);
-                        h2 = 2 * m2 + c2;
-                        ha2 = m2;
-                        hf2 = m2 + c2;
-                        v22 = Math.PI * da2 * da2 * b2 / 4;
-                        M22 = v22 * dichtstahl;
-                        preis22 = M22 * preisstal;
-                        Console.WriteLine("    Teilung               ={0}mm", p2);//*****************************
-                        Console.WriteLine("    Kopfkreisdurchmesser  ={0}mm", da2);
-                        Console.WriteLine("    Kopfspiel             ={0}mm", c2);
-                        Console.WriteLine("    Fusskreisdurchmesser  ={0}mm", df2);
-                        Console.WriteLine("    zahnhoehe             ={0}mm", h2);
-                        Console.WriteLine("    zahnkopfhoehe         ={0}mm", ha2);
-                        Console.WriteLine("    zahnfusshoehe         ={0}mm", hf2);
-                        Console.WriteLine("    volumen               ={0}mm^3", v22);
-                        Console.WriteLine("    Masse                 ={0}kg", M22);
-                        Console.WriteLine("    preis                 ={0}Euro", preis22);
-
-
-                    }
-
-                    else 
-
-                    {
-
-                        Console.WriteLine();
-                        Console.WriteLine("bitte geben Sie 1 oder 2");
-
-                      
-
-                    }
-
                     Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("1.messig");
+                    Console.WriteLine("2.stahl");
+                    Console.WriteLine("Bitte wahlen Sie den werkstoff des zahnrad aus und eintippen 1,2 dann bestätigen Sie mit 'Enter'.");
+                    string w2 = "";             //  werkstoff auswahl
+                    while (w2 != "1" && w2 != "2")
+                    {
+                        w2=Console.ReadLine();
+                        if (w2 == "1")
+                        {
+                            //Berechnung
+                            double p2, da2, df2, h2, ha2, hf2, c2, v21, preis21, M21;
+                            p2 = Math.PI * m2;
+                            da2 = d2 + 2 * m2;
+                            c2 = 0.16 * m2;
+                            df2 = d2 - 2 * (m2 + c2);
+                            h2 = 2 * m2 + c2;
+                            ha2 = m2;
+                            hf2 = m2 + c2;
+                            v21 = Math.PI * da2 * da2 * b2 / 4;
+                            M21 = v21 * dichtmessig;
+                            preis21 = M21 * preismessig;
+                            Console.WriteLine("    Teilung               ={0}mm", p2);//*****************************
+                            Console.WriteLine("    Kopfkreisdurchmesser  ={0}mm", da2);
+                            Console.WriteLine("    Kopfspiel             ={0}mm", c2);
+                            Console.WriteLine("    Fusskreisdurchmesser  ={0}mm", df2);
+                            Console.WriteLine("    zahnhoehe             ={0}mm", h2);
+                            Console.WriteLine("    zahnkopfhoehe         ={0}mm", ha2);
+                            Console.WriteLine("    zahnfusshoehe         ={0}mm", hf2);
+                            Console.WriteLine("    volumen               ={0}mm^3", v21);
+                            Console.WriteLine("    Masse                 ={0}kg", M21);
+                            Console.WriteLine("    preis                 ={0}Euro", preis21);
+
+                        }
+
+                        else if (w2 == "2")
+                        {
+                            //Berechnung
+                            double p2, da2, df2, h2, ha2, hf2, c2, v22, preis22, M22;
+                            p2 = Math.PI * m2;
+                            da2 = d2 + 2 * m2;
+                            c2 = 0.16 * m2;
+                            df2 = d2 - 2 * (m2 + c2);
+                            h2 = 2 * m2 + c2;
+                            ha2 = m2;
+                            hf2 = m2 + c2;
+                            v22 = Math.PI * da2 * da2 * b2 / 4;
+                            M22 = v22 * dichtstahl;
+                            preis22 = M22 * preisstal;
+                            Console.WriteLine("    Teilung               ={0}mm", p2);//*****************************
+                            Console.WriteLine("    Kopfkreisdurchmesser  ={0}mm", da2);
+                            Console.WriteLine("    Kopfspiel             ={0}mm", c2);
+                            Console.WriteLine("    Fusskreisdurchmesser  ={0}mm", df2);
+                            Console.WriteLine("    zahnhoehe             ={0}mm", h2);
+                            Console.WriteLine("    zahnkopfhoehe         ={0}mm", ha2);
+                            Console.WriteLine("    zahnfusshoehe         ={0}mm", hf2);
+                            Console.WriteLine("    volumen               ={0}mm^3", v22);
+                            Console.WriteLine("    Masse                 ={0}kg", M22);
+                            Console.WriteLine("    preis                 ={0}Euro", preis22);
+                        }
+
+                        else
+
+                        {
+
+                            Console.WriteLine();
+                            Console.WriteLine("bitte geben Sie 1 oder 2");
+
+                        }
+
+                    }
 
                 }
                 else if (e == "2")
@@ -278,15 +259,15 @@ namespace Berechnung_Zahnrad
 
             }
 
-           
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Bitte waehlen Sie aussenliegender order innenliegender gegenrad");
             Console.WriteLine("1. aussenliegend");
             Console.WriteLine("2.innenliegend");
+            string aus = "";                                                                                                                   // aus:  waehlen Sie aussenliegender order innenliegender gegenrad
+            double a;                                                                                                                          // a:    Achsabstand
 
-            string aus = ""; //waehlen Sie aussenliegender order innenliegender gegenrad
-
-            double a;
-            while (aus != "1" || aus != "2")
+            while (aus != "1" && aus != "2" )
             {
                 aus = Console.ReadLine();                      
                 if (aus == "1")
@@ -309,7 +290,9 @@ namespace Berechnung_Zahnrad
                     }
                     else if (d2 == d1)
                     {
-                        Console.WriteLine("falsch , Breite muessen unterschiedlich sein");
+                        Console.WriteLine("falsch , Teilkreisdurchmesser muessen unterschiedlich sein");
+                        Console.WriteLine("bitten sie 1 oder 2 eintippen!");
+                        aus = "t";          //um noch mal zu machen
                     }
 
                 }
